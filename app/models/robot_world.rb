@@ -35,12 +35,12 @@ class RobotWorld
   def self.update(id, demographics)
     database.transaction do
       target = database['robots'].find { |robot| robot["id"] == id }
-      target["name"]       = demographics[:name]
-      target["city"]       = demographics[:city]
-      target["state"]      = demographics[:state]
-      target["birthday"]   = demographics[:birthday]
-      target["date_hired"] = demographics[:date_hired]
-      targe["department"]  = demographics[:department]
+      target["name"]        = demographics[:name]
+      target["city"]        = demographics[:city]
+      target["state"]       = demographics[:state]
+      target["birthday"]    = demographics[:birthday]
+      target["date_hired"]  = demographics[:date_hired]
+      target["department"]  = demographics[:department]
     end
   end
 

@@ -1,0 +1,17 @@
+---
+robots:
+- id: 1
+  name: ashley
+  city: djjd
+  state: sjjss
+  birthday: jsjs
+  date_hired: sjjs
+  department: sjsjs
+- id: 2
+  name: ''
+  city: ''
+  state: ''
+  birthday: ''
+  date_hired: ''
+  department: ''
+total: 2

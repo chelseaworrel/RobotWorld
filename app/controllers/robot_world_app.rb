@@ -8,14 +8,24 @@ class RobotWorldApp < Sinatra::Base
     erb :new
   end
 
-  post '/profile' do
+  post '/profile/new' do
     RobotWorld.create(params[:robot])
-    redirect "/profile/#{id}"
+    redirect '/'
   end
 
   get '/profile/:id' do |id|
     @robots = RobotWorld.find(id.to_i)
     erb :profile
+  end
+
+  get '/profile/:id/edit' do |id|
+    @robots = RobotWorld.find(id.to_i)
+    erb :edit
+  end
+
+  put '/profile/:id' do |id|
+    RobotWorld.update(id.to_i, params[:robot])
+    redirect "/profile/#{id}"
   end
 
 end

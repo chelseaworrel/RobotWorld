@@ -9,12 +9,12 @@ class Robot
 
 
   def initialize(demographics)
-    @state      = demographics["state"]
-    @name       = demographics["name"]
-    @city       = demographics["city"]
     @id         = demographics["id"]
-    @birthday   = demographics["birthday"]
-    @date_hired = demographics["date_hired"]
-    @department = demographics["department"]
+    @name       = demographics["name"]        #|| Faker::App.name
+    @city       = demographics["city"]        #|| Faker::Address.city
+    @state      = demographics["state"]       #|| Faker::Address.state
+    @birthday   = demographics["birthday"]    #|| Faker::Date.backward(10000)
+    @date_hired = demographics["date_hired"]  #|| Faker::Date.backward(10000)
+    @department = demographics["department"]  #|| Faker::Commerce.department
   end
 end
