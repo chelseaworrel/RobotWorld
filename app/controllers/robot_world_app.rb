@@ -1,11 +1,20 @@
 class RobotWorldApp < Sinatra::Base
-  set :root, File.join(File.dirname(__FILE__), '..')
-
   get '/' do
+    @robots = RobotWorld.all
     erb :directory
   end
 
-  get '/profile' do
+  get '/profile/new' do
+    erb :new
+  end
+
+  post '/profile' do
+    RobotWorld.create(params[:robot])
+    redirect "/profile/#{id}"
+  end
+
+  get '/profile/:id' do |id|
+    @robots = RobotWorld.find(id.to_i)
     erb :profile
   end
 
