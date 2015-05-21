@@ -28,4 +28,9 @@ class RobotWorldApp < Sinatra::Base
     redirect "/profile/#{id}"
   end
 
+  delete '/profile/:id' do |id|
+    RobotWorld.delete(id.to_i)
+    redirect '/'
+  end
+
 end

@@ -1,12 +1,5 @@
 ---
 robots:
-- id: 1
-  name: ashley
-  city: djjd
-  state: sjjss
-  birthday: jsjs
-  date_hired: sjjs
-  department: sjsjs
 - id: 2
   name: ''
   city: ''

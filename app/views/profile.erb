@@ -1,8 +1,12 @@
-<h1>I'm Bob the Robot<h2>
-  <h2><%= @robots.name %></h2>
-  <h2><%= @robots.city %></h2>
-  <h2><%= @robots.state %></h2>
-  <h2><%= @robots.birthday %></h2>
-  <h2><%= @robots.date_hired %></h2>
-  <h2><%= @robots.department %></h2>
-    <a href="/profile/<%= @robots.id %>/edit">Edit Robot</a>
+<h2><%= @robots.name %></h2>
+  <img src="http://robohash.org/<%= @robots.id %>">
+<h2><%= @robots.city %></h2>
+<h2><%= @robots.state %></h2>
+<h2><%= @robots.birthday %></h2>
+<h2><%= @robots.date_hired %></h2>
+<h2><%= @robots.department %></h2>
+  <a href="/profile/<%= @robots.id %>/edit">Edit Robot</a>
+    <form action= "/profile/<%= @robots.id %>" method= "POST">
+      <input type= "hidden" value= "DELETE" name= "_method">
+      <input type= "submit" value= "Delete">
+    </form>
